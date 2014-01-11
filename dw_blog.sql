@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 10, 2014 at 10:21 PM
+-- Generation Time: Jan 10, 2014 at 10:46 PM
 -- Server version: 5.6.11-log
 -- PHP Version: 5.3.25
 
@@ -30,12 +30,12 @@ USE `dw_blog`;
 
 CREATE TABLE IF NOT EXISTS `posts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(400) NOT NULL,
+  `title` varchar(400) COLLATE utf8_bin NOT NULL,
   `postedAt` datetime NOT NULL,
   `tzOffsetSec` int(11) NOT NULL,
-  `body` text NOT NULL,
+  `body` text COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `posts`
@@ -52,12 +52,12 @@ INSERT INTO `posts` (`id`, `title`, `postedAt`, `tzOffsetSec`, `body`) VALUES
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(200) NOT NULL,
-  `password` varchar(500) NOT NULL,
-  `email` varchar(200) NOT NULL,
+  `username` varchar(200) COLLATE utf8_bin NOT NULL,
+  `password` varchar(500) COLLATE utf8_bin NOT NULL,
+  `email` varchar(200) COLLATE utf8_bin NOT NULL,
   `role` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `users`
